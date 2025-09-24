@@ -153,7 +153,8 @@ export const translations: Record<string, Translation> = {
       medium: 'Medium',
       hard: 'Hard',
       currentQuestion: 'Current Question',
-      language: 'Language'
+      language: 'Language',
+      notOnMap: 'Not on map'
     }
   },
   nl: {
@@ -167,6 +168,7 @@ export const translations: Record<string, Translation> = {
       'Bosnia and Herzegovina': 'Bosnië en Herzegovina',
       'Bulgaria': 'Bulgarije',
       'Croatia': 'Kroatië',
+      'Cyprus': 'Cyprus',
       'Czechia': 'Tsjechië',
       'Denmark': 'Denemarken',
       'Estonia': 'Estland',
@@ -194,33 +196,42 @@ export const translations: Record<string, Translation> = {
       'Montenegro': 'Montenegro',
       'Netherlands': 'Nederland',
       'North Macedonia': 'Noord-Macedonië',
+      'Northern Ireland': 'Noord-Ierland',
       'Norway': 'Noorwegen',
       'Poland': 'Polen',
       'Portugal': 'Portugal',
       'Romania': 'Roemenië',
+      'Russia': 'Rusland',
       'San Marino': 'San Marino',
+      'Scotland': 'Schotland',
       'Serbia': 'Servië',
       'Slovakia': 'Slowakije',
       'Slovenia': 'Slovenië',
       'Spain': 'Spanje',
       'Sweden': 'Zweden',
       'Switzerland': 'Zwitserland',
+      'Turkey': 'Turkije',
       'Ukraine': 'Oekraïne',
       'United Kingdom': 'Verenigd Koninkrijk',
-      'Vatican City': 'Vaticaanstad'
+      'Vatican City': 'Vaticaanstad',
+      'Wales': 'Wales'
     },
     capitals: {
       'Mariehamn': 'Mariehamn',
       'Tirana': 'Tirana',
       'Andorra la Vella': 'Andorra la Vella',
+      'Ankara': 'Ankara',
       'Vienna': 'Wenen',
+      'Belfast': 'Belfast',
       'Minsk': 'Minsk',
       'Brussels': 'Brussel',
+      'Cardiff': 'Cardiff',
       'Sarajevo': 'Sarajevo',
       'Sofia': 'Sofia',
       'Zagreb': 'Zagreb',
       'Prague': 'Praag',
       'Copenhagen': 'Kopenhagen',
+      'Edinburgh': 'Edinburgh',
       'Tallinn': 'Tallinn',
       'Tórshavn': 'Tórshavn',
       'Helsinki': 'Helsinki',
@@ -243,6 +254,8 @@ export const translations: Record<string, Translation> = {
       'Valletta': 'Valletta',
       'Chișinău': 'Chisinau',
       'Monaco': 'Monaco',
+      'Moscow': 'Moskou',
+      'Nicosia': 'Nicosia',
       'Podgorica': 'Podgorica',
       'Amsterdam': 'Amsterdam',
       'Skopje': 'Skopje',
@@ -282,7 +295,8 @@ export const translations: Record<string, Translation> = {
       medium: 'Gemiddeld',
       hard: 'Moeilijk',
       currentQuestion: 'Huidige Vraag',
-      language: 'Taal'
+      language: 'Taal',
+      notOnMap: 'Niet op de kaart'
     }
   }
 }

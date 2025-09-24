@@ -23,6 +23,7 @@ interface Capital {
     confidence: string
   }
   difficulty: string
+  offMap?: boolean
 }
 
 interface QuizData {
@@ -98,8 +99,11 @@ export default function MapQuiz() {
     const scaleX = canvas.width / quizData.mapDimensions.width
     const scaleY = canvas.height / quizData.mapDimensions.height
 
-    // Draw markers for all capitals
+    // Draw markers for all capitals (skip off-map cities)
     quizData.capitals.forEach(capital => {
+      // Skip cities that are off the map
+      if (capital.offMap) return;
+
       const x = capital.mapPosition.x * scaleX
       const y = capital.mapPosition.y * scaleY
 
@@ -275,6 +279,11 @@ export default function MapQuiz() {
                 </div>
                 <h3 className="text-xl font-bold text-center mb-2">
                   {t.ui.whatIsCapital} {t.countries[currentCapital.country] || currentCapital.country}?
+                  {currentCapital.offMap && (
+                    <div className="text-sm text-orange-600 font-medium mt-1">
+                      ({t.ui.notOnMap})
+                    </div>
+                  )}
                 </h3>
                 <div className="text-sm text-gray-600 text-center">
                   <span className={`px-2 py-1 rounded text-xs ${

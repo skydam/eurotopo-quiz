@@ -5,79 +5,203 @@
   },
   "capitals": [
     {
-      "id": "AL",
-      "country": "Albania",
-      "capital": "Tirana",
+      "id": "NL",
+      "country": "Netherlands",
+      "capital": "Amsterdam",
       "coordinates": {
-        "lat": 41.32,
-        "lng": 19.82
+        "lat": 52.35,
+        "lng": 4.92
       },
-      "region": "Central Europe",
-      "population": 2837743,
-      "area": 28748,
-      "flag": "🇦🇱",
+      "region": "Western Europe",
+      "population": 16655799,
+      "area": 41850,
+      "flag": "🇳🇱",
       "alternativeSpellings": [
-        "AL",
-        "Shqipëri",
-        "Shqipëria",
-        "Shqipnia"
+        "NL",
+        "Holland",
+        "Nederland",
+        "The Netherlands"
       ],
       "mapPosition": {
-        "x": 6343,
-        "y": 8238,
-        "confidence": "calibrated"
-      },
-      "difficulty": "hard"
-    },
-    {
-      "id": "AT",
-      "country": "Austria",
-      "capital": "Vienna",
-      "coordinates": {
-        "lat": 48.2,
-        "lng": 16.37
-      },
-      "region": "Central Europe",
-      "population": 8917205,
-      "area": 83871,
-      "flag": "🇦🇹",
-      "alternativeSpellings": [
-        "AT",
-        "Osterreich",
-        "Oesterreich"
-      ],
-      "mapPosition": {
-        "x": 5481,
-        "y": 6506,
+        "x": 3522,
+        "y": 5509,
         "confidence": "calibrated"
       },
       "difficulty": "easy"
     },
     {
-      "id": "BY",
-      "country": "Belarus",
-      "capital": "Minsk",
+      "id": "TR",
+      "country": "Turkey",
+      "capital": "Ankara",
       "coordinates": {
-        "lat": 53.9,
-        "lng": 27.57
+        "lat": 39.9334,
+        "lng": 32.8597
       },
-      "region": "Eastern Europe",
-      "population": 9398861,
-      "area": 207600,
-      "flag": "🇧🇾",
+      "region": "Asia/Europe",
+      "population": 5663322,
+      "area": 783562,
+      "flag": "🇹🇷",
       "alternativeSpellings": [
-        "BY",
-        "Bielaruś",
-        "Republic of Belarus",
-        "Белоруссия",
-        "Республика Белоруссия"
+        "Ankara",
+        "Angora",
+        "Ancyra"
       ],
       "mapPosition": {
-        "x": 7062,
-        "y": 4858,
+        "x": -1,
+        "y": -1,
+        "confidence": "off-map"
+      },
+      "difficulty": "medium",
+      "offMap": true
+    },
+    {
+      "id": "GR",
+      "country": "Greece",
+      "capital": "Athens",
+      "coordinates": {
+        "lat": 37.98,
+        "lng": 23.73
+      },
+      "region": "Southern Europe",
+      "population": 10715549,
+      "area": 131990,
+      "flag": "🇬🇷",
+      "alternativeSpellings": [
+        "GR",
+        "Elláda",
+        "Hellenic Republic",
+        "Ελληνική Δημοκρατία"
+      ],
+      "mapPosition": {
+        "x": 7360,
+        "y": 8864,
         "confidence": "calibrated"
       },
-      "difficulty": "hard"
+      "difficulty": "easy"
+    },
+    {
+      "id": "GB-NIR",
+      "country": "Northern Ireland",
+      "capital": "Belfast",
+      "coordinates": {
+        "lat": 54.5973,
+        "lng": -5.9301
+      },
+      "region": "Northern Europe",
+      "population": 343542,
+      "area": 14130,
+      "flag": "🇬🇧",
+      "alternativeSpellings": [
+        "Belfast",
+        "Béal Feirste"
+      ],
+      "mapPosition": {
+        "x": 1768,
+        "y": 4998,
+        "confidence": "calculated"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "RS",
+      "country": "Serbia",
+      "capital": "Belgrade",
+      "coordinates": {
+        "lat": 44.83,
+        "lng": 20.5
+      },
+      "region": "Central Europe",
+      "population": 6908224,
+      "area": 88361,
+      "flag": "🇷🇸",
+      "alternativeSpellings": [
+        "RS",
+        "Srbija",
+        "Republic of Serbia",
+        "Република Србија",
+        "Republika Srbija"
+      ],
+      "mapPosition": {
+        "x": 6413,
+        "y": 7296,
+        "confidence": "calculated"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "DE",
+      "country": "Germany",
+      "capital": "Berlin",
+      "coordinates": {
+        "lat": 52.52,
+        "lng": 13.4
+      },
+      "region": "Western Europe",
+      "population": 83240525,
+      "area": 357114,
+      "flag": "🇩🇪",
+      "alternativeSpellings": [
+        "DE",
+        "Federal Republic of Germany",
+        "Bundesrepublik Deutschland"
+      ],
+      "mapPosition": {
+        "x": 5057,
+        "y": 5395,
+        "confidence": "calculated"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "CH",
+      "country": "Switzerland",
+      "capital": "Bern",
+      "coordinates": {
+        "lat": 46.92,
+        "lng": 7.47
+      },
+      "region": "Western Europe",
+      "population": 8654622,
+      "area": 41284,
+      "flag": "🇨🇭",
+      "alternativeSpellings": [
+        "CH",
+        "Swiss Confederation",
+        "Schweiz",
+        "Suisse",
+        "Svizzera",
+        "Svizra"
+      ],
+      "mapPosition": {
+        "x": 3882,
+        "y": 6865,
+        "confidence": "calculated"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "SK",
+      "country": "Slovakia",
+      "capital": "Bratislava",
+      "coordinates": {
+        "lat": 48.15,
+        "lng": 17.12
+      },
+      "region": "Central Europe",
+      "population": 5458827,
+      "area": 49037,
+      "flag": "🇸🇰",
+      "alternativeSpellings": [
+        "SK",
+        "Slovak Republic",
+        "Slovenská republika"
+      ],
+      "mapPosition": {
+        "x": 5650,
+        "y": 6493,
+        "confidence": "calibrated"
+      },
+      "difficulty": "medium"
     },
     {
       "id": "BE",
@@ -110,101 +234,99 @@
       "difficulty": "easy"
     },
     {
-      "id": "BA",
-      "country": "Bosnia and Herzegovina",
-      "capital": "Sarajevo",
+      "id": "RO",
+      "country": "Romania",
+      "capital": "Bucharest",
       "coordinates": {
-        "lat": 43.87,
-        "lng": 18.42
+        "lat": 44.43,
+        "lng": 26.1
       },
       "region": "Central Europe",
-      "population": 3280815,
-      "area": 51209,
-      "flag": "🇧🇦",
+      "population": 19286123,
+      "area": 238391,
+      "flag": "🇷🇴",
       "alternativeSpellings": [
-        "BA",
-        "Bosnia-Herzegovina",
-        "Босна и Херцеговина"
+        "RO",
+        "Rumania",
+        "Roumania",
+        "România"
       ],
       "mapPosition": {
-        "x": 6060,
-        "y": 7556,
-        "confidence": "calculated"
-      },
-      "difficulty": "hard"
-    },
-    {
-      "id": "BG",
-      "country": "Bulgaria",
-      "capital": "Sofia",
-      "coordinates": {
-        "lat": 42.68,
-        "lng": 23.32
-      },
-      "region": "Central Europe",
-      "population": 6927288,
-      "area": 110879,
-      "flag": "🇧🇬",
-      "alternativeSpellings": [
-        "BG",
-        "Republic of Bulgaria",
-        "Република България"
-      ],
-      "mapPosition": {
-        "x": 7004,
-        "y": 7788,
+        "x": 7420,
+        "y": 7178,
         "confidence": "calculated"
       },
       "difficulty": "medium"
     },
     {
-      "id": "HR",
-      "country": "Croatia",
-      "capital": "Zagreb",
+      "id": "HU",
+      "country": "Hungary",
+      "capital": "Budapest",
       "coordinates": {
-        "lat": 45.8,
-        "lng": 16
+        "lat": 47.5,
+        "lng": 19.08
       },
       "region": "Central Europe",
-      "population": 4047200,
-      "area": 56594,
-      "flag": "🇭🇷",
+      "population": 9749763,
+      "area": 93028,
+      "flag": "🇭🇺",
       "alternativeSpellings": [
-        "HR",
-        "Hrvatska",
-        "Republic of Croatia",
-        "Republika Hrvatska"
+        "HU"
       ],
       "mapPosition": {
-        "x": 5502,
-        "y": 7106,
+        "x": 5946,
+        "y": 6670,
+        "confidence": "calculated"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "GB-WLS",
+      "country": "Wales",
+      "capital": "Cardiff",
+      "coordinates": {
+        "lat": 51.4816,
+        "lng": -3.1791
+      },
+      "region": "Northern Europe",
+      "population": 362310,
+      "area": 20779,
+      "flag": "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
+      "alternativeSpellings": [
+        "Cardiff",
+        "Caerdydd"
+      ],
+      "mapPosition": {
+        "x": 2181,
+        "y": 5621,
+        "confidence": "calculated"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "MD",
+      "country": "Moldova",
+      "capital": "Chișinău",
+      "coordinates": {
+        "lat": 47.01,
+        "lng": 28.9
+      },
+      "region": "Eastern Europe",
+      "population": 2617820,
+      "area": 33846,
+      "flag": "🇲🇩",
+      "alternativeSpellings": [
+        "MD",
+        "Moldova, Republic of",
+        "Republic of Moldova",
+        "Republica Moldova"
+      ],
+      "mapPosition": {
+        "x": 7720,
+        "y": 6380,
         "confidence": "calibrated"
       },
-      "difficulty": "medium"
-    },
-    {
-      "id": "CZ",
-      "country": "Czechia",
-      "capital": "Prague",
-      "coordinates": {
-        "lat": 50.08,
-        "lng": 14.47
-      },
-      "region": "Central Europe",
-      "population": 10698896,
-      "area": 78865,
-      "flag": "🇨🇿",
-      "alternativeSpellings": [
-        "CZ",
-        "Česká republika",
-        "Česko"
-      ],
-      "mapPosition": {
-        "x": 5221,
-        "y": 6017,
-        "confidence": "calculated"
-      },
-      "difficulty": "medium"
+      "difficulty": "hard"
     },
     {
       "id": "DK",
@@ -232,27 +354,50 @@
       "difficulty": "easy"
     },
     {
-      "id": "EE",
-      "country": "Estonia",
-      "capital": "Tallinn",
+      "id": "IE",
+      "country": "Ireland",
+      "capital": "Dublin",
       "coordinates": {
-        "lat": 59.43,
-        "lng": 24.72
+        "lat": 53.32,
+        "lng": -6.23
       },
       "region": "Northern Europe",
-      "population": 1331057,
-      "area": 45227,
-      "flag": "🇪🇪",
+      "population": 4994724,
+      "area": 70273,
+      "flag": "🇮🇪",
       "alternativeSpellings": [
-        "EE",
-        "Eesti",
-        "Republic of Estonia",
-        "Eesti Vabariik"
+        "IE",
+        "Éire",
+        "Republic of Ireland",
+        "Poblacht na hÉireann"
       ],
       "mapPosition": {
-        "x": 6381,
-        "y": 3519,
+        "x": 1737,
+        "y": 5004,
         "confidence": "calibrated"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "GB-SCT",
+      "country": "Scotland",
+      "capital": "Edinburgh",
+      "coordinates": {
+        "lat": 55.9533,
+        "lng": -3.1883
+      },
+      "region": "Northern Europe",
+      "population": 524930,
+      "area": 77933,
+      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+      "alternativeSpellings": [
+        "Edinburgh",
+        "Dùn Èideann"
+      ],
+      "mapPosition": {
+        "x": 2180,
+        "y": 4726,
+        "confidence": "calculated"
       },
       "difficulty": "medium"
     },
@@ -283,441 +428,24 @@
       "difficulty": "medium"
     },
     {
-      "id": "FR",
-      "country": "France",
-      "capital": "Paris",
+      "id": "UA",
+      "country": "Ukraine",
+      "capital": "Kyiv",
       "coordinates": {
-        "lat": 48.87,
-        "lng": 2.33
-      },
-      "region": "Western Europe",
-      "population": 67391582,
-      "area": 551695,
-      "flag": "🇫🇷",
-      "alternativeSpellings": [
-        "FR",
-        "French Republic",
-        "République française"
-      ],
-      "mapPosition": {
-        "x": 3052,
-        "y": 6340,
-        "confidence": "calculated"
-      },
-      "difficulty": "easy"
-    },
-    {
-      "id": "DE",
-      "country": "Germany",
-      "capital": "Berlin",
-      "coordinates": {
-        "lat": 52.52,
-        "lng": 13.4
-      },
-      "region": "Western Europe",
-      "population": 83240525,
-      "area": 357114,
-      "flag": "🇩🇪",
-      "alternativeSpellings": [
-        "DE",
-        "Federal Republic of Germany",
-        "Bundesrepublik Deutschland"
-      ],
-      "mapPosition": {
-        "x": 5057,
-        "y": 5395,
-        "confidence": "calculated"
-      },
-      "difficulty": "easy"
-    },
-    {
-      "id": "GR",
-      "country": "Greece",
-      "capital": "Athens",
-      "coordinates": {
-        "lat": 37.98,
-        "lng": 23.73
-      },
-      "region": "Southern Europe",
-      "population": 10715549,
-      "area": 131990,
-      "flag": "🇬🇷",
-      "alternativeSpellings": [
-        "GR",
-        "Elláda",
-        "Hellenic Republic",
-        "Ελληνική Δημοκρατία"
-      ],
-      "mapPosition": {
-        "x": 7360,
-        "y": 8864,
-        "confidence": "calibrated"
-      },
-      "difficulty": "easy"
-    },
-    {
-      "id": "HU",
-      "country": "Hungary",
-      "capital": "Budapest",
-      "coordinates": {
-        "lat": 47.5,
-        "lng": 19.08
-      },
-      "region": "Central Europe",
-      "population": 9749763,
-      "area": 93028,
-      "flag": "🇭🇺",
-      "alternativeSpellings": [
-        "HU"
-      ],
-      "mapPosition": {
-        "x": 5946,
-        "y": 6670,
-        "confidence": "calculated"
-      },
-      "difficulty": "medium"
-    },
-    {
-      "id": "IS",
-      "country": "Iceland",
-      "capital": "Reykjavik",
-      "coordinates": {
-        "lat": 64.15,
-        "lng": -21.95
-      },
-      "region": "Northern Europe",
-      "population": 366425,
-      "area": 103000,
-      "flag": "🇮🇸",
-      "alternativeSpellings": [
-        "IS",
-        "Island",
-        "Republic of Iceland",
-        "Lýðveldið Ísland"
-      ],
-      "mapPosition": {
-        "x": 682,
-        "y": 1784,
-        "confidence": "calibrated"
-      },
-      "difficulty": "medium"
-    },
-    {
-      "id": "IE",
-      "country": "Ireland",
-      "capital": "Dublin",
-      "coordinates": {
-        "lat": 53.32,
-        "lng": -6.23
-      },
-      "region": "Northern Europe",
-      "population": 4994724,
-      "area": 70273,
-      "flag": "🇮🇪",
-      "alternativeSpellings": [
-        "IE",
-        "Éire",
-        "Republic of Ireland",
-        "Poblacht na hÉireann"
-      ],
-      "mapPosition": {
-        "x": 1737,
-        "y": 5004,
-        "confidence": "calibrated"
-      },
-      "difficulty": "easy"
-    },
-    {
-      "id": "IT",
-      "country": "Italy",
-      "capital": "Rome",
-      "coordinates": {
-        "lat": 41.9,
-        "lng": 12.48
-      },
-      "region": "Southern Europe",
-      "population": 59554023,
-      "area": 301336,
-      "flag": "🇮🇹",
-      "alternativeSpellings": [
-        "IT",
-        "Italian Republic",
-        "Repubblica italiana"
-      ],
-      "mapPosition": {
-        "x": 5001,
-        "y": 8099,
-        "confidence": "calculated"
-      },
-      "difficulty": "easy"
-    },
-    {
-      "id": "XK",
-      "country": "Kosovo",
-      "capital": "Pristina",
-      "coordinates": {
-        "lat": 42.67,
-        "lng": 21.17
-      },
-      "region": "Central Europe",
-      "population": 1775378,
-      "area": 10908,
-      "flag": "🇽🇰",
-      "alternativeSpellings": [
-        "XK",
-        "Република Косово"
-      ],
-      "mapPosition": {
-        "x": 6599,
-        "y": 7786,
-        "confidence": "calibrated"
-      },
-      "difficulty": "hard"
-    },
-    {
-      "id": "LV",
-      "country": "Latvia",
-      "capital": "Riga",
-      "coordinates": {
-        "lat": 56.95,
-        "lng": 24.1
-      },
-      "region": "Northern Europe",
-      "population": 1901548,
-      "area": 64559,
-      "flag": "🇱🇻",
-      "alternativeSpellings": [
-        "LV",
-        "Republic of Latvia",
-        "Latvijas Republika"
-      ],
-      "mapPosition": {
-        "x": 6397,
-        "y": 4169,
-        "confidence": "calibrated"
-      },
-      "difficulty": "medium"
-    },
-    {
-      "id": "LT",
-      "country": "Lithuania",
-      "capital": "Vilnius",
-      "coordinates": {
-        "lat": 54.68,
-        "lng": 25.32
-      },
-      "region": "Northern Europe",
-      "population": 2794700,
-      "area": 65300,
-      "flag": "🇱🇹",
-      "alternativeSpellings": [
-        "LT",
-        "Republic of Lithuania",
-        "Lietuvos Respublika"
-      ],
-      "mapPosition": {
-        "x": 6615,
-        "y": 4707,
-        "confidence": "calculated"
-      },
-      "difficulty": "medium"
-    },
-    {
-      "id": "LU",
-      "country": "Luxembourg",
-      "capital": "Luxembourg",
-      "coordinates": {
-        "lat": 49.6,
-        "lng": 6.12
-      },
-      "region": "Western Europe",
-      "population": 632275,
-      "area": 2586,
-      "flag": "🇱🇺",
-      "alternativeSpellings": [
-        "LU",
-        "Grand Duchy of Luxembourg",
-        "Grand-Duché de Luxembourg",
-        "Großherzogtum Luxemburg",
-        "Groussherzogtum Lëtzebuerg"
-      ],
-      "mapPosition": {
-        "x": 3663,
-        "y": 6169,
-        "confidence": "calibrated"
-      },
-      "difficulty": "hard"
-    },
-    {
-      "id": "MT",
-      "country": "Malta",
-      "capital": "Valletta",
-      "coordinates": {
-        "lat": 35.88,
-        "lng": 14.5
-      },
-      "region": "Southern Europe",
-      "population": 525285,
-      "area": 316,
-      "flag": "🇲🇹",
-      "alternativeSpellings": [
-        "MT",
-        "Republic of Malta",
-        "Repubblika ta' Malta"
-      ],
-      "mapPosition": {
-        "x": 5652,
-        "y": 9519,
-        "confidence": "calculated"
-      },
-      "difficulty": "hard"
-    },
-    {
-      "id": "MD",
-      "country": "Moldova",
-      "capital": "Chișinău",
-      "coordinates": {
-        "lat": 47.01,
-        "lng": 28.9
+        "lat": 50.43,
+        "lng": 30.52
       },
       "region": "Eastern Europe",
-      "population": 2617820,
-      "area": 33846,
-      "flag": "🇲🇩",
+      "population": 44134693,
+      "area": 603500,
+      "flag": "🇺🇦",
       "alternativeSpellings": [
-        "MD",
-        "Moldova, Republic of",
-        "Republic of Moldova",
-        "Republica Moldova"
+        "UA",
+        "Ukrayina"
       ],
       "mapPosition": {
-        "x": 7720,
-        "y": 6380,
-        "confidence": "calibrated"
-      },
-      "difficulty": "hard"
-    },
-    {
-      "id": "ME",
-      "country": "Montenegro",
-      "capital": "Podgorica",
-      "coordinates": {
-        "lat": 42.43,
-        "lng": 19.27
-      },
-      "region": "Central Europe",
-      "population": 621718,
-      "area": 13812,
-      "flag": "🇲🇪",
-      "alternativeSpellings": [
-        "ME",
-        "Crna Gora"
-      ],
-      "mapPosition": {
-        "x": 6237,
-        "y": 7920,
-        "confidence": "calculated"
-      },
-      "difficulty": "hard"
-    },
-    {
-      "id": "NL",
-      "country": "Netherlands",
-      "capital": "Amsterdam",
-      "coordinates": {
-        "lat": 52.35,
-        "lng": 4.92
-      },
-      "region": "Western Europe",
-      "population": 16655799,
-      "area": 41850,
-      "flag": "🇳🇱",
-      "alternativeSpellings": [
-        "NL",
-        "Holland",
-        "Nederland",
-        "The Netherlands"
-      ],
-      "mapPosition": {
-        "x": 3522,
-        "y": 5509,
-        "confidence": "calibrated"
-      },
-      "difficulty": "easy"
-    },
-    {
-      "id": "MK",
-      "country": "North Macedonia",
-      "capital": "Skopje",
-      "coordinates": {
-        "lat": 42,
-        "lng": 21.43
-      },
-      "region": "Central Europe",
-      "population": 2077132,
-      "area": 25713,
-      "flag": "🇲🇰",
-      "alternativeSpellings": [
-        "MK",
-        "The former Yugoslav Republic of Macedonia",
-        "Republic of North Macedonia",
-        "Macedonia, The Former Yugoslav Republic of",
-        "Република Северна Македонија"
-      ],
-      "mapPosition": {
-        "x": 6666,
-        "y": 7974,
-        "confidence": "calculated"
-      },
-      "difficulty": "hard"
-    },
-    {
-      "id": "NO",
-      "country": "Norway",
-      "capital": "Oslo",
-      "coordinates": {
-        "lat": 59.92,
-        "lng": 10.75
-      },
-      "region": "Northern Europe",
-      "population": 5379475,
-      "area": 323802,
-      "flag": "🇳🇴",
-      "alternativeSpellings": [
-        "NO",
-        "Norge",
-        "Noreg",
-        "Kingdom of Norway",
-        "Kongeriket Norge",
-        "Kongeriket Noreg"
-      ],
-      "mapPosition": {
-        "x": 4423,
-        "y": 3622,
-        "confidence": "calibrated"
-      },
-      "difficulty": "easy"
-    },
-    {
-      "id": "PL",
-      "country": "Poland",
-      "capital": "Warsaw",
-      "coordinates": {
-        "lat": 52.25,
-        "lng": 21
-      },
-      "region": "Central Europe",
-      "population": 37950802,
-      "area": 312679,
-      "flag": "🇵🇱",
-      "alternativeSpellings": [
-        "PL",
-        "Republic of Poland",
-        "Rzeczpospolita Polska"
-      ],
-      "mapPosition": {
-        "x": 6135,
-        "y": 5286,
+        "x": 7744,
+        "y": 5540,
         "confidence": "calibrated"
       },
       "difficulty": "medium"
@@ -748,81 +476,6 @@
       "difficulty": "easy"
     },
     {
-      "id": "RO",
-      "country": "Romania",
-      "capital": "Bucharest",
-      "coordinates": {
-        "lat": 44.43,
-        "lng": 26.1
-      },
-      "region": "Central Europe",
-      "population": 19286123,
-      "area": 238391,
-      "flag": "🇷🇴",
-      "alternativeSpellings": [
-        "RO",
-        "Rumania",
-        "Roumania",
-        "România"
-      ],
-      "mapPosition": {
-        "x": 7420,
-        "y": 7178,
-        "confidence": "calculated"
-      },
-      "difficulty": "medium"
-    },
-    {
-      "id": "RS",
-      "country": "Serbia",
-      "capital": "Belgrade",
-      "coordinates": {
-        "lat": 44.83,
-        "lng": 20.5
-      },
-      "region": "Central Europe",
-      "population": 6908224,
-      "area": 88361,
-      "flag": "🇷🇸",
-      "alternativeSpellings": [
-        "RS",
-        "Srbija",
-        "Republic of Serbia",
-        "Република Србија",
-        "Republika Srbija"
-      ],
-      "mapPosition": {
-        "x": 6413,
-        "y": 7296,
-        "confidence": "calculated"
-      },
-      "difficulty": "medium"
-    },
-    {
-      "id": "SK",
-      "country": "Slovakia",
-      "capital": "Bratislava",
-      "coordinates": {
-        "lat": 48.15,
-        "lng": 17.12
-      },
-      "region": "Central Europe",
-      "population": 5458827,
-      "area": 49037,
-      "flag": "🇸🇰",
-      "alternativeSpellings": [
-        "SK",
-        "Slovak Republic",
-        "Slovenská republika"
-      ],
-      "mapPosition": {
-        "x": 5650,
-        "y": 6493,
-        "confidence": "calibrated"
-      },
-      "difficulty": "medium"
-    },
-    {
       "id": "SI",
       "country": "Slovenia",
       "capital": "Ljubljana",
@@ -843,104 +496,6 @@
         "x": 5243,
         "y": 7042,
         "confidence": "calculated"
-      },
-      "difficulty": "medium"
-    },
-    {
-      "id": "ES",
-      "country": "Spain",
-      "capital": "Madrid",
-      "coordinates": {
-        "lat": 40.4,
-        "lng": -3.68
-      },
-      "region": "Southern Europe",
-      "population": 47351567,
-      "area": 505992,
-      "flag": "🇪🇸",
-      "alternativeSpellings": [
-        "ES",
-        "Kingdom of Spain",
-        "Reino de España"
-      ],
-      "mapPosition": {
-        "x": 1591,
-        "y": 8255,
-        "confidence": "calculated"
-      },
-      "difficulty": "easy"
-    },
-    {
-      "id": "SE",
-      "country": "Sweden",
-      "capital": "Stockholm",
-      "coordinates": {
-        "lat": 59.33,
-        "lng": 18.05
-      },
-      "region": "Northern Europe",
-      "population": 10353442,
-      "area": 450295,
-      "flag": "🇸🇪",
-      "alternativeSpellings": [
-        "SE",
-        "Kingdom of Sweden",
-        "Konungariket Sverige"
-      ],
-      "mapPosition": {
-        "x": 5437,
-        "y": 3678,
-        "confidence": "calibrated"
-      },
-      "difficulty": "easy"
-    },
-    {
-      "id": "CH",
-      "country": "Switzerland",
-      "capital": "Bern",
-      "coordinates": {
-        "lat": 46.92,
-        "lng": 7.47
-      },
-      "region": "Western Europe",
-      "population": 8654622,
-      "area": 41284,
-      "flag": "🇨🇭",
-      "alternativeSpellings": [
-        "CH",
-        "Swiss Confederation",
-        "Schweiz",
-        "Suisse",
-        "Svizzera",
-        "Svizra"
-      ],
-      "mapPosition": {
-        "x": 3882,
-        "y": 6865,
-        "confidence": "calculated"
-      },
-      "difficulty": "easy"
-    },
-    {
-      "id": "UA",
-      "country": "Ukraine",
-      "capital": "Kyiv",
-      "coordinates": {
-        "lat": 50.43,
-        "lng": 30.52
-      },
-      "region": "Eastern Europe",
-      "population": 44134693,
-      "area": 603500,
-      "flag": "🇺🇦",
-      "alternativeSpellings": [
-        "UA",
-        "Ukrayina"
-      ],
-      "mapPosition": {
-        "x": 7744,
-        "y": 5540,
-        "confidence": "calibrated"
       },
       "difficulty": "medium"
     },
@@ -969,6 +524,255 @@
       "difficulty": "easy"
     },
     {
+      "id": "LU",
+      "country": "Luxembourg",
+      "capital": "Luxembourg",
+      "coordinates": {
+        "lat": 49.6,
+        "lng": 6.12
+      },
+      "region": "Western Europe",
+      "population": 632275,
+      "area": 2586,
+      "flag": "🇱🇺",
+      "alternativeSpellings": [
+        "LU",
+        "Grand Duchy of Luxembourg",
+        "Grand-Duché de Luxembourg",
+        "Großherzogtum Luxemburg",
+        "Groussherzogtum Lëtzebuerg"
+      ],
+      "mapPosition": {
+        "x": 3663,
+        "y": 6169,
+        "confidence": "calibrated"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "ES",
+      "country": "Spain",
+      "capital": "Madrid",
+      "coordinates": {
+        "lat": 40.4,
+        "lng": -3.68
+      },
+      "region": "Southern Europe",
+      "population": 47351567,
+      "area": 505992,
+      "flag": "🇪🇸",
+      "alternativeSpellings": [
+        "ES",
+        "Kingdom of Spain",
+        "Reino de España"
+      ],
+      "mapPosition": {
+        "x": 1591,
+        "y": 8255,
+        "confidence": "calculated"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "BY",
+      "country": "Belarus",
+      "capital": "Minsk",
+      "coordinates": {
+        "lat": 53.9,
+        "lng": 27.57
+      },
+      "region": "Eastern Europe",
+      "population": 9398861,
+      "area": 207600,
+      "flag": "🇧🇾",
+      "alternativeSpellings": [
+        "BY",
+        "Bielaruś",
+        "Republic of Belarus",
+        "Белоруссия",
+        "Республика Белоруссия"
+      ],
+      "mapPosition": {
+        "x": 7062,
+        "y": 4858,
+        "confidence": "calibrated"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "RU",
+      "country": "Russia",
+      "capital": "Moscow",
+      "capitalDutch": "Moskou",
+      "coordinates": {
+        "lat": 55.7558,
+        "lng": 37.6173
+      },
+      "region": "Eastern Europe",
+      "population": 12506468,
+      "area": 17098242,
+      "flag": "🇷🇺",
+      "alternativeSpellings": [
+        "Moscow",
+        "Moskva",
+        "Москва",
+        "Moskou"
+      ],
+      "mapPosition": {
+        "x": -1,
+        "y": -1,
+        "confidence": "off-map"
+      },
+      "difficulty": "medium",
+      "offMap": true
+    },
+    {
+      "id": "CY",
+      "country": "Cyprus",
+      "capital": "Nicosia",
+      "coordinates": {
+        "lat": 35.1856,
+        "lng": 33.3823
+      },
+      "region": "Mediterranean",
+      "population": 116392,
+      "area": 9251,
+      "flag": "🇨🇾",
+      "alternativeSpellings": [
+        "Nicosia",
+        "Lefkosia",
+        "Λευκωσία"
+      ],
+      "mapPosition": {
+        "x": -1,
+        "y": -1,
+        "confidence": "off-map"
+      },
+      "difficulty": "hard",
+      "offMap": true
+    },
+    {
+      "id": "NO",
+      "country": "Norway",
+      "capital": "Oslo",
+      "coordinates": {
+        "lat": 59.92,
+        "lng": 10.75
+      },
+      "region": "Northern Europe",
+      "population": 5379475,
+      "area": 323802,
+      "flag": "🇳🇴",
+      "alternativeSpellings": [
+        "NO",
+        "Norge",
+        "Noreg",
+        "Kingdom of Norway",
+        "Kongeriket Norge",
+        "Kongeriket Noreg"
+      ],
+      "mapPosition": {
+        "x": 4423,
+        "y": 3622,
+        "confidence": "calibrated"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "FR",
+      "country": "France",
+      "capital": "Paris",
+      "coordinates": {
+        "lat": 48.87,
+        "lng": 2.33
+      },
+      "region": "Western Europe",
+      "population": 67391582,
+      "area": 551695,
+      "flag": "🇫🇷",
+      "alternativeSpellings": [
+        "FR",
+        "French Republic",
+        "République française"
+      ],
+      "mapPosition": {
+        "x": 3052,
+        "y": 6340,
+        "confidence": "calculated"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ME",
+      "country": "Montenegro",
+      "capital": "Podgorica",
+      "coordinates": {
+        "lat": 42.43,
+        "lng": 19.27
+      },
+      "region": "Central Europe",
+      "population": 621718,
+      "area": 13812,
+      "flag": "🇲🇪",
+      "alternativeSpellings": [
+        "ME",
+        "Crna Gora"
+      ],
+      "mapPosition": {
+        "x": 6237,
+        "y": 7920,
+        "confidence": "calculated"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "CZ",
+      "country": "Czechia",
+      "capital": "Prague",
+      "coordinates": {
+        "lat": 50.08,
+        "lng": 14.47
+      },
+      "region": "Central Europe",
+      "population": 10698896,
+      "area": 78865,
+      "flag": "🇨🇿",
+      "alternativeSpellings": [
+        "CZ",
+        "Česká republika",
+        "Česko"
+      ],
+      "mapPosition": {
+        "x": 5221,
+        "y": 6017,
+        "confidence": "calculated"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "XK",
+      "country": "Kosovo",
+      "capital": "Pristina",
+      "coordinates": {
+        "lat": 42.67,
+        "lng": 21.17
+      },
+      "region": "Central Europe",
+      "population": 1775378,
+      "area": 10908,
+      "flag": "🇽🇰",
+      "alternativeSpellings": [
+        "XK",
+        "Република Косово"
+      ],
+      "mapPosition": {
+        "x": 6599,
+        "y": 7786,
+        "confidence": "calibrated"
+      },
+      "difficulty": "hard"
+    },
+    {
       "id": "XK",
       "country": "Kosovo",
       "capital": "Pristina",
@@ -983,10 +787,352 @@
         "confidence": "calibrated"
       },
       "difficulty": "hard"
+    },
+    {
+      "id": "IS",
+      "country": "Iceland",
+      "capital": "Reykjavik",
+      "coordinates": {
+        "lat": 64.15,
+        "lng": -21.95
+      },
+      "region": "Northern Europe",
+      "population": 366425,
+      "area": 103000,
+      "flag": "🇮🇸",
+      "alternativeSpellings": [
+        "IS",
+        "Island",
+        "Republic of Iceland",
+        "Lýðveldið Ísland"
+      ],
+      "mapPosition": {
+        "x": 682,
+        "y": 1784,
+        "confidence": "calibrated"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "LV",
+      "country": "Latvia",
+      "capital": "Riga",
+      "coordinates": {
+        "lat": 56.95,
+        "lng": 24.1
+      },
+      "region": "Northern Europe",
+      "population": 1901548,
+      "area": 64559,
+      "flag": "🇱🇻",
+      "alternativeSpellings": [
+        "LV",
+        "Republic of Latvia",
+        "Latvijas Republika"
+      ],
+      "mapPosition": {
+        "x": 6397,
+        "y": 4169,
+        "confidence": "calibrated"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "IT",
+      "country": "Italy",
+      "capital": "Rome",
+      "coordinates": {
+        "lat": 41.9,
+        "lng": 12.48
+      },
+      "region": "Southern Europe",
+      "population": 59554023,
+      "area": 301336,
+      "flag": "🇮🇹",
+      "alternativeSpellings": [
+        "IT",
+        "Italian Republic",
+        "Repubblica italiana"
+      ],
+      "mapPosition": {
+        "x": 5001,
+        "y": 8099,
+        "confidence": "calculated"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "BA",
+      "country": "Bosnia and Herzegovina",
+      "capital": "Sarajevo",
+      "coordinates": {
+        "lat": 43.87,
+        "lng": 18.42
+      },
+      "region": "Central Europe",
+      "population": 3280815,
+      "area": 51209,
+      "flag": "🇧🇦",
+      "alternativeSpellings": [
+        "BA",
+        "Bosnia-Herzegovina",
+        "Босна и Херцеговина"
+      ],
+      "mapPosition": {
+        "x": 6060,
+        "y": 7556,
+        "confidence": "calculated"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "MK",
+      "country": "North Macedonia",
+      "capital": "Skopje",
+      "coordinates": {
+        "lat": 42,
+        "lng": 21.43
+      },
+      "region": "Central Europe",
+      "population": 2077132,
+      "area": 25713,
+      "flag": "🇲🇰",
+      "alternativeSpellings": [
+        "MK",
+        "The former Yugoslav Republic of Macedonia",
+        "Republic of North Macedonia",
+        "Macedonia, The Former Yugoslav Republic of",
+        "Република Северна Македонија"
+      ],
+      "mapPosition": {
+        "x": 6666,
+        "y": 7974,
+        "confidence": "calculated"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "BG",
+      "country": "Bulgaria",
+      "capital": "Sofia",
+      "coordinates": {
+        "lat": 42.68,
+        "lng": 23.32
+      },
+      "region": "Central Europe",
+      "population": 6927288,
+      "area": 110879,
+      "flag": "🇧🇬",
+      "alternativeSpellings": [
+        "BG",
+        "Republic of Bulgaria",
+        "Република България"
+      ],
+      "mapPosition": {
+        "x": 7004,
+        "y": 7788,
+        "confidence": "calculated"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "SE",
+      "country": "Sweden",
+      "capital": "Stockholm",
+      "coordinates": {
+        "lat": 59.33,
+        "lng": 18.05
+      },
+      "region": "Northern Europe",
+      "population": 10353442,
+      "area": 450295,
+      "flag": "🇸🇪",
+      "alternativeSpellings": [
+        "SE",
+        "Kingdom of Sweden",
+        "Konungariket Sverige"
+      ],
+      "mapPosition": {
+        "x": 5437,
+        "y": 3678,
+        "confidence": "calibrated"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "EE",
+      "country": "Estonia",
+      "capital": "Tallinn",
+      "coordinates": {
+        "lat": 59.43,
+        "lng": 24.72
+      },
+      "region": "Northern Europe",
+      "population": 1331057,
+      "area": 45227,
+      "flag": "🇪🇪",
+      "alternativeSpellings": [
+        "EE",
+        "Eesti",
+        "Republic of Estonia",
+        "Eesti Vabariik"
+      ],
+      "mapPosition": {
+        "x": 6381,
+        "y": 3519,
+        "confidence": "calibrated"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "AL",
+      "country": "Albania",
+      "capital": "Tirana",
+      "coordinates": {
+        "lat": 41.32,
+        "lng": 19.82
+      },
+      "region": "Central Europe",
+      "population": 2837743,
+      "area": 28748,
+      "flag": "🇦🇱",
+      "alternativeSpellings": [
+        "AL",
+        "Shqipëri",
+        "Shqipëria",
+        "Shqipnia"
+      ],
+      "mapPosition": {
+        "x": 6343,
+        "y": 8238,
+        "confidence": "calibrated"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "MT",
+      "country": "Malta",
+      "capital": "Valletta",
+      "coordinates": {
+        "lat": 35.88,
+        "lng": 14.5
+      },
+      "region": "Southern Europe",
+      "population": 525285,
+      "area": 316,
+      "flag": "🇲🇹",
+      "alternativeSpellings": [
+        "MT",
+        "Republic of Malta",
+        "Repubblika ta' Malta"
+      ],
+      "mapPosition": {
+        "x": 5652,
+        "y": 9519,
+        "confidence": "calculated"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "AT",
+      "country": "Austria",
+      "capital": "Vienna",
+      "coordinates": {
+        "lat": 48.2,
+        "lng": 16.37
+      },
+      "region": "Central Europe",
+      "population": 8917205,
+      "area": 83871,
+      "flag": "🇦🇹",
+      "alternativeSpellings": [
+        "AT",
+        "Osterreich",
+        "Oesterreich"
+      ],
+      "mapPosition": {
+        "x": 5481,
+        "y": 6506,
+        "confidence": "calibrated"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "LT",
+      "country": "Lithuania",
+      "capital": "Vilnius",
+      "coordinates": {
+        "lat": 54.68,
+        "lng": 25.32
+      },
+      "region": "Northern Europe",
+      "population": 2794700,
+      "area": 65300,
+      "flag": "🇱🇹",
+      "alternativeSpellings": [
+        "LT",
+        "Republic of Lithuania",
+        "Lietuvos Respublika"
+      ],
+      "mapPosition": {
+        "x": 6615,
+        "y": 4707,
+        "confidence": "calculated"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "PL",
+      "country": "Poland",
+      "capital": "Warsaw",
+      "coordinates": {
+        "lat": 52.25,
+        "lng": 21
+      },
+      "region": "Central Europe",
+      "population": 37950802,
+      "area": 312679,
+      "flag": "🇵🇱",
+      "alternativeSpellings": [
+        "PL",
+        "Republic of Poland",
+        "Rzeczpospolita Polska"
+      ],
+      "mapPosition": {
+        "x": 6135,
+        "y": 5286,
+        "confidence": "calibrated"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "HR",
+      "country": "Croatia",
+      "capital": "Zagreb",
+      "coordinates": {
+        "lat": 45.8,
+        "lng": 16
+      },
+      "region": "Central Europe",
+      "population": 4047200,
+      "area": 56594,
+      "flag": "🇭🇷",
+      "alternativeSpellings": [
+        "HR",
+        "Hrvatska",
+        "Republic of Croatia",
+        "Republika Hrvatska"
+      ],
+      "mapPosition": {
+        "x": 5502,
+        "y": 7106,
+        "confidence": "calibrated"
+      },
+      "difficulty": "medium"
     }
   ],
   "metadata": {
-    "totalCapitals": 40,
+    "totalCapitals": 46,
     "calibratedPoints": 22,
     "excludedCapitals": 3,
     "mapBounds": {
@@ -1045,6 +1191,19 @@
       "Warschau",
       "Wenen",
       "Zagreb"
+    ],
+    "includesRegionalCapitals": true,
+    "includesOffMapCities": true,
+    "lastUpdated": "2025-09-24T11:21:21.548Z",
+    "offMapCities": [
+      "Ankara",
+      "Moscow",
+      "Nicosia"
+    ],
+    "regionalCapitals": [
+      "Edinburgh",
+      "Cardiff",
+      "Belfast"
     ]
   }
 }
