@@ -56,12 +56,21 @@ export default function MapQuiz() {
   // const [gameMode, setGameMode] = useState<'practice' | 'quiz'>('practice') // Future feature
   const [showAnswer, setShowAnswer] = useState(false)
   const [language, setLanguage] = useState<'en' | 'nl'>('nl')
+  const [questionHistory, setQuestionHistory] = useState<boolean[]>([]) // Track correct/incorrect for last 20 questions
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const imageRef = useRef<HTMLImageElement>(null)
   const animationRef = useRef<number | null>(null)
   const pulseRef = useRef({ size: 12, growing: true, opacity: 1, time: 0 })
 
   const t = getTranslation(language)
+
+  // Calculate rolling score (average of last 20 questions, or all questions if less than 20)
+  const calculateRollingScore = useCallback(() => {
+    if (questionHistory.length === 0) return 0
+    const recentQuestions = questionHistory.slice(-20) // Last 20 questions
+    const correctCount = recentQuestions.filter(correct => correct).length
+    return Math.round((correctCount / recentQuestions.length) * 100)
+  }, [questionHistory])
 
   // Load quiz data
   useEffect(() => {
@@ -244,6 +253,12 @@ export default function MapQuiz() {
       setFeedback(`${t.ui.incorrect} ${language === 'en' ? 'The capital of' : 'De hoofdstad van'} ${translatedCountry} ${language === 'en' ? 'is' : 'is'} ${translatedCapital}.`)
     }
 
+    // Update question history (keep last 20 questions)
+    setQuestionHistory(prev => {
+      const newHistory = [...prev, isCorrect]
+      return newHistory.slice(-20) // Keep only last 20
+    })
+
     setTotalQuestions(totalQuestions + 1)
     setShowAnswer(true)
 
@@ -256,6 +271,13 @@ export default function MapQuiz() {
   // Skip current question
   const handleSkip = () => {
     if (!quizData) return
+
+    // Track skip as incorrect for the graph
+    setQuestionHistory(prev => {
+      const newHistory = [...prev, false] // Skip counts as incorrect
+      return newHistory.slice(-20) // Keep only last 20
+    })
+
     selectRandomCapital(quizData.capitals)
     setTotalQuestions(totalQuestions + 1)
   }
@@ -373,7 +395,7 @@ export default function MapQuiz() {
                     </button>
                   </div>
                 </form>
-              ) : (
+              ) : (\
                 <div className="space-y-4">
                   <div className={`p-4 rounded-lg ${
                     feedback.startsWith('Correct') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
@@ -386,6 +408,41 @@ export default function MapQuiz() {
                     <p><strong>{t.ui.coordinates}:</strong> {currentCapital.coordinates.lat.toFixed(2)}°N, {Math.abs(currentCapital.coordinates.lng).toFixed(2)}°{currentCapital.coordinates.lng >= 0 ? 'E' : 'W'}</p>
                   </div>
                   <p className="text-sm text-gray-500">{t.ui.nextQuestion}</p>
+                </div>
+              )}
+
+              {/* Rolling Score Graph */}
+              {questionHistory.length > 0 && (
+                <div className="mt-6 p-4 bg-white rounded-lg border border-gray-200">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                    {language === 'en' ? 'Rolling Score' : 'Lopende Score'}
+                  </h4>
+                  <div className="mb-2">
+                    <span className="text-2xl font-bold text-blue-600">
+                      {calculateRollingScore()}%
+                    </span>
+                    <span className="text-sm text-gray-500 ml-2">
+                      ({questionHistory.length < 20
+                        ? `${language === 'en' ? 'Last' : 'Laatste'} ${questionHistory.length}`
+                        : `${language === 'en' ? 'Last 20' : 'Laatste 20'}`}
+                      {language === 'en' ? ' questions' : ' vragen'})
+                    </span>
+                  </div>
+
+                  {/* Simple bar chart visualization */}
+                  <div className="space-y-1">
+                    {questionHistory.slice(-Math.min(20, questionHistory.length)).map((correct, index) => (
+                      <div key={index} className="flex items-center gap-2">
+                        <div className="text-xs text-gray-400 w-6">
+                          {questionHistory.length - Math.min(20, questionHistory.length) + index + 1}
+                        </div>
+                        <div className={`h-4 w-4 rounded-sm ${correct ? 'bg-green-500' : 'bg-red-500'}`}></div>
+                        <div className="text-xs text-gray-600">
+                          {correct ? (language === 'en' ? 'Correct' : 'Juist') : (language === 'en' ? 'Incorrect' : 'Fout')}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
             </>
