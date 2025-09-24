@@ -23,6 +23,7 @@ export interface Translation {
     hard: string
     currentQuestion: string
     language: string
+    notOnMap: string
   }
 }
 
