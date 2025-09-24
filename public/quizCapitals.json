@@ -47,9 +47,9 @@
         "Ancyra"
       ],
       "mapPosition": {
-        "x": -1,
-        "y": -1,
-        "confidence": "off-map"
+        "x": 8444,
+        "y": 8249,
+        "confidence": "calculated"
       },
       "difficulty": "medium",
       "offMap": true
@@ -96,9 +96,9 @@
         "Béal Feirste"
       ],
       "mapPosition": {
-        "x": 1768,
-        "y": 4998,
-        "confidence": "calculated"
+        "x": 1894,
+        "y": 4684,
+        "confidence": "calibrated"
       },
       "difficulty": "medium"
     },
@@ -122,8 +122,8 @@
         "Republika Srbija"
       ],
       "mapPosition": {
-        "x": 6413,
-        "y": 7296,
+        "x": 6417,
+        "y": 7297,
         "confidence": "calculated"
       },
       "difficulty": "medium"
@@ -146,9 +146,9 @@
         "Bundesrepublik Deutschland"
       ],
       "mapPosition": {
-        "x": 5057,
-        "y": 5395,
-        "confidence": "calculated"
+        "x": 4843,
+        "y": 5429,
+        "confidence": "calibrated"
       },
       "difficulty": "easy"
     },
@@ -173,8 +173,8 @@
         "Svizra"
       ],
       "mapPosition": {
-        "x": 3882,
-        "y": 6865,
+        "x": 3892,
+        "y": 6864,
         "confidence": "calculated"
       },
       "difficulty": "easy"
@@ -252,8 +252,8 @@
         "România"
       ],
       "mapPosition": {
-        "x": 7420,
-        "y": 7178,
+        "x": 7424,
+        "y": 7179,
         "confidence": "calculated"
       },
       "difficulty": "medium"
@@ -274,7 +274,7 @@
         "HU"
       ],
       "mapPosition": {
-        "x": 5946,
+        "x": 5958,
         "y": 6670,
         "confidence": "calculated"
       },
@@ -297,9 +297,9 @@
         "Caerdydd"
       ],
       "mapPosition": {
-        "x": 2181,
-        "y": 5621,
-        "confidence": "calculated"
+        "x": 2180,
+        "y": 5595,
+        "confidence": "calibrated"
       },
       "difficulty": "medium"
     },
@@ -347,8 +347,8 @@
         "Kongeriget Danmark"
       ],
       "mapPosition": {
-        "x": 4672,
-        "y": 4664,
+        "x": 4678,
+        "y": 4647,
         "confidence": "calculated"
       },
       "difficulty": "easy"
@@ -395,9 +395,9 @@
         "Dùn Èideann"
       ],
       "mapPosition": {
-        "x": 2180,
-        "y": 4726,
-        "confidence": "calculated"
+        "x": 2378,
+        "y": 4454,
+        "confidence": "calibrated"
       },
       "difficulty": "medium"
     },
@@ -493,8 +493,8 @@
         "Republika Slovenija"
       ],
       "mapPosition": {
-        "x": 5243,
-        "y": 7042,
+        "x": 5235,
+        "y": 7041,
         "confidence": "calculated"
       },
       "difficulty": "medium"
@@ -567,8 +567,8 @@
         "Reino de España"
       ],
       "mapPosition": {
-        "x": 1591,
-        "y": 8255,
+        "x": 1334,
+        "y": 8182,
         "confidence": "calculated"
       },
       "difficulty": "easy"
@@ -619,9 +619,9 @@
         "Moskou"
       ],
       "mapPosition": {
-        "x": -1,
-        "y": -1,
-        "confidence": "off-map"
+        "x": 8880,
+        "y": 4246,
+        "confidence": "calculated"
       },
       "difficulty": "medium",
       "offMap": true
@@ -644,9 +644,9 @@
         "Λευκωσία"
       ],
       "mapPosition": {
-        "x": -1,
-        "y": -1,
-        "confidence": "off-map"
+        "x": 8662,
+        "y": 9546,
+        "confidence": "calculated"
       },
       "difficulty": "hard",
       "offMap": true
@@ -696,8 +696,8 @@
         "République française"
       ],
       "mapPosition": {
-        "x": 3052,
-        "y": 6340,
+        "x": 3047,
+        "y": 6339,
         "confidence": "calculated"
       },
       "difficulty": "easy"
@@ -719,7 +719,7 @@
         "Crna Gora"
       ],
       "mapPosition": {
-        "x": 6237,
+        "x": 6235,
         "y": 7920,
         "confidence": "calculated"
       },
@@ -743,8 +743,8 @@
         "Česko"
       ],
       "mapPosition": {
-        "x": 5221,
-        "y": 6017,
+        "x": 5133,
+        "y": 6028,
         "confidence": "calculated"
       },
       "difficulty": "medium"
@@ -855,8 +855,8 @@
         "Repubblica italiana"
       ],
       "mapPosition": {
-        "x": 5001,
-        "y": 8099,
+        "x": 5042,
+        "y": 8106,
         "confidence": "calculated"
       },
       "difficulty": "easy"
@@ -879,7 +879,7 @@
         "Босна и Херцеговина"
       ],
       "mapPosition": {
-        "x": 6060,
+        "x": 6058,
         "y": 7556,
         "confidence": "calculated"
       },
@@ -905,7 +905,7 @@
         "Република Северна Македонија"
       ],
       "mapPosition": {
-        "x": 6666,
+        "x": 6667,
         "y": 7974,
         "confidence": "calculated"
       },
@@ -929,8 +929,8 @@
         "Република България"
       ],
       "mapPosition": {
-        "x": 7004,
-        "y": 7788,
+        "x": 7013,
+        "y": 7789,
         "confidence": "calculated"
       },
       "difficulty": "medium"
@@ -1027,9 +1027,9 @@
         "Repubblika ta' Malta"
       ],
       "mapPosition": {
-        "x": 5652,
-        "y": 9519,
-        "confidence": "calculated"
+        "x": 5390,
+        "y": 9660,
+        "confidence": "calibrated"
       },
       "difficulty": "hard"
     },
@@ -1075,8 +1075,8 @@
         "Lietuvos Respublika"
       ],
       "mapPosition": {
-        "x": 6615,
-        "y": 4707,
+        "x": 6613,
+        "y": 4706,
         "confidence": "calculated"
       },
       "difficulty": "medium"
@@ -1133,7 +1133,7 @@
   ],
   "metadata": {
     "totalCapitals": 46,
-    "calibratedPoints": 22,
+    "calibratedPoints": 28,
     "excludedCapitals": 3,
     "mapBounds": {
       "minX": 0,
@@ -1204,6 +1204,7 @@
       "Edinburgh",
       "Cardiff",
       "Belfast"
-    ]
+    ],
+    "lastCalibrationUpdate": "2025-09-24T18:39:15.578Z"
   }
 }
