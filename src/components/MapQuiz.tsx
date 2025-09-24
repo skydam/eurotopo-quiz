@@ -58,6 +58,8 @@ export default function MapQuiz() {
   const [language, setLanguage] = useState<'en' | 'nl'>('en')
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const imageRef = useRef<HTMLImageElement>(null)
+  const animationRef = useRef<number | null>(null)
+  const pulseRef = useRef({ size: 12, growing: true, opacity: 1, time: 0 })
 
   const t = getTranslation(language)
 
@@ -81,7 +83,7 @@ export default function MapQuiz() {
     setShowAnswer(false)
   }
 
-  // Draw the map and markers
+  // Draw the map and markers with animation
   const drawMap = useCallback(() => {
     if (!canvasRef.current || !imageRef.current || !quizData) return
 
@@ -112,15 +114,41 @@ export default function MapQuiz() {
       if (capital.difficulty === 'medium') color = '#f59e0b' // orange
       if (capital.difficulty === 'hard') color = '#ef4444' // red
 
-      // Highlight current capital
+      // Highlight current capital with animation
       if (currentCapital && capital.id === currentCapital.id) {
-        // Draw pulsing circle for current capital
+        const pulse = pulseRef.current
+
+        // Draw glow effect
+        ctx.save()
+        ctx.shadowBlur = 15 + (pulse.size - 12) * 2
+        ctx.shadowColor = '#10b981'
+
+        // Draw animated pulsing circle
         ctx.beginPath()
-        ctx.arc(x, y, 12, 0, 2 * Math.PI)
-        ctx.fillStyle = '#10b981' // green
+        ctx.arc(x, y, pulse.size, 0, 2 * Math.PI)
+        ctx.fillStyle = `rgba(16, 185, 129, ${pulse.opacity})` // green with animated opacity
         ctx.fill()
+
+        // Draw outer ring
         ctx.strokeStyle = '#ffffff'
         ctx.lineWidth = 3
+        ctx.stroke()
+
+        // Draw inner circle
+        ctx.beginPath()
+        ctx.arc(x, y, pulse.size * 0.6, 0, 2 * Math.PI)
+        ctx.fillStyle = '#ffffff'
+        ctx.fill()
+
+        ctx.restore()
+
+        // Draw expanding ripple effect
+        const rippleRadius = 20 + (pulse.time % 100) * 0.5
+        const rippleOpacity = Math.max(0, 1 - (pulse.time % 100) / 100)
+        ctx.beginPath()
+        ctx.arc(x, y, rippleRadius, 0, 2 * Math.PI)
+        ctx.strokeStyle = `rgba(16, 185, 129, ${rippleOpacity * 0.5})`
+        ctx.lineWidth = 2
         ctx.stroke()
       } else {
         // Draw normal marker
@@ -140,10 +168,55 @@ export default function MapQuiz() {
     drawMap()
   }
 
-  // Redraw when current capital changes
-  useEffect(() => {
+  // Animation loop for pulsing effect
+  const animate = useCallback(() => {
+    const pulse = pulseRef.current
+
+    // Update pulse size
+    if (pulse.growing) {
+      pulse.size += 0.15
+      if (pulse.size >= 16) {
+        pulse.growing = false
+      }
+    } else {
+      pulse.size -= 0.15
+      if (pulse.size <= 10) {
+        pulse.growing = true
+      }
+    }
+
+    // Update opacity for breathing effect
+    pulse.opacity = 0.7 + Math.sin(pulse.time * 0.05) * 0.3
+
+    // Increment time for ripple effect
+    pulse.time += 2
+
     drawMap()
-  }, [currentCapital, quizData, drawMap])
+    animationRef.current = requestAnimationFrame(animate)
+  }, [drawMap])
+
+  // Start/stop animation when current capital changes
+  useEffect(() => {
+    if (currentCapital && !showAnswer) {
+      // Start animation
+      pulseRef.current = { size: 12, growing: true, opacity: 1, time: 0 }
+      animationRef.current = requestAnimationFrame(animate)
+    } else {
+      // Stop animation
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current)
+        animationRef.current = null
+      }
+      drawMap()
+    }
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current)
+        animationRef.current = null
+      }
+    }
+  }, [currentCapital, showAnswer, animate, drawMap])
 
   // Handle answer submission
   const handleSubmit = (e: React.FormEvent) => {
