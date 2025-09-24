@@ -55,7 +55,7 @@ export default function MapQuiz() {
   const [feedback, setFeedback] = useState('')
   // const [gameMode, setGameMode] = useState<'practice' | 'quiz'>('practice') // Future feature
   const [showAnswer, setShowAnswer] = useState(false)
-  const [language, setLanguage] = useState<'en' | 'nl'>('en')
+  const [language, setLanguage] = useState<'en' | 'nl'>('nl')
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const imageRef = useRef<HTMLImageElement>(null)
   const animationRef = useRef<number | null>(null)
@@ -350,7 +350,7 @@ export default function MapQuiz() {
                     {currentCapital.flag}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-center mb-2">
+                <h3 className="text-xl font-bold text-center mb-2 text-gray-900">
                   {t.ui.whatIsCapital} {t.countries[currentCapital.country] || currentCapital.country}?
                   {currentCapital.offMap && (
                     <div className="text-sm text-orange-600 font-medium mt-1">
