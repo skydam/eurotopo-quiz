@@ -395,7 +395,7 @@ export default function MapQuiz() {
                     </button>
                   </div>
                 </form>
-              ) : (\
+              ) : (
                 <div className="space-y-4">
                   <div className={`p-4 rounded-lg ${
                     feedback.startsWith('Correct') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
