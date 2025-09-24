@@ -57,6 +57,8 @@ export default function MapQuiz() {
   const [showAnswer, setShowAnswer] = useState(false)
   const [language, setLanguage] = useState<'en' | 'nl'>('nl')
   const [questionHistory, setQuestionHistory] = useState<boolean[]>([]) // Track correct/incorrect for last 20 questions
+  const [consecutiveCorrect, setConsecutiveCorrect] = useState(0) // Track consecutive correct answers
+  const [showCelebration, setShowCelebration] = useState(false) // Show celebration video
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const imageRef = useRef<HTMLImageElement>(null)
   const animationRef = useRef<number | null>(null)
@@ -249,8 +251,19 @@ export default function MapQuiz() {
     if (isCorrect) {
       setScore(score + 1)
       setFeedback(`${t.ui.correct} ${translatedCapital} ${language === 'en' ? 'is the capital of' : 'is de hoofdstad van'} ${translatedCountry}.`)
+
+      // Track consecutive correct answers
+      const newConsecutiveCorrect = consecutiveCorrect + 1
+      setConsecutiveCorrect(newConsecutiveCorrect)
+
+      // Show celebration video at 15 consecutive correct answers
+      if (newConsecutiveCorrect === 15) {
+        setShowCelebration(true)
+      }
     } else {
       setFeedback(`${t.ui.incorrect} ${language === 'en' ? 'The capital of' : 'De hoofdstad van'} ${translatedCountry} ${language === 'en' ? 'is' : 'is'} ${translatedCapital}.`)
+      // Reset consecutive counter on incorrect answer
+      setConsecutiveCorrect(0)
     }
 
     // Update question history (keep last 20 questions)
@@ -278,6 +291,9 @@ export default function MapQuiz() {
       return newHistory.slice(-20) // Keep only last 20
     })
 
+    // Reset consecutive counter on skip
+    setConsecutiveCorrect(0)
+
     selectRandomCapital(quizData.capitals)
     setTotalQuestions(totalQuestions + 1)
   }
@@ -303,6 +319,7 @@ export default function MapQuiz() {
             <div className="text-right">
               <p className="text-blue-100">{t.ui.totalCapitals}: {quizData.metadata.totalCapitals}</p>
               <p className="text-blue-100">{t.ui.accuracy}: {totalQuestions > 0 ? Math.round((score / totalQuestions) * 100) : 0}%</p>
+              <p className="text-blue-100">{language === 'en' ? 'Streak' : 'Reeks'}: {consecutiveCorrect}/15</p>
             </div>
             <div className="text-right">
               <p className="text-blue-100 text-sm mb-1">{t.ui.language}</p>
@@ -449,6 +466,33 @@ export default function MapQuiz() {
           )}
         </div>
       </div>
+
+      {/* Celebration Video Modal */}
+      {showCelebration && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+          <div className="relative w-full h-full max-w-4xl max-h-3xl flex items-center justify-center">
+            <video
+              autoPlay
+              className="w-full h-full object-contain"
+              onEnded={() => {
+                setShowCelebration(false)
+                setConsecutiveCorrect(0) // Reset counter after video
+              }}
+            >
+              <source src="/celebration.mp4" type="video/mp4" />
+            </video>
+            <button
+              onClick={() => {
+                setShowCelebration(false)
+                setConsecutiveCorrect(0) // Reset counter when manually closed
+              }}
+              className="absolute top-4 right-4 text-white bg-black bg-opacity-50 hover:bg-opacity-75 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
