@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EuroTopo Quiz 🌍
 
-## Getting Started
+An interactive European capitals quiz application built with Next.js, designed to help students learn European geography with visual map-based learning.
 
-First, run the development server:
+## Features ✨
+
+- **Interactive Map**: Accurately positioned capital markers on a detailed Europe map
+- **Bilingual Support**: Switch between English 🇬🇧 and Dutch 🇳🇱
+- **Visual Learning**: Color-coded difficulty system (Easy/Medium/Hard)
+- **Real-time Feedback**: Immediate answer validation with educational info
+- **Progress Tracking**: Score and accuracy percentage
+- **Mobile Responsive**: Works on all devices
+- **Curriculum Focused**: Customized for specific educational requirements
+
+## Technology Stack 🚀
+
+- **Framework**: Next.js 15.5.4 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4
+- **Build Tool**: Turbopack (fastest bundler)
+- **Deployment**: Vercel-optimized
+- **Data**: Precisely calibrated coordinate mapping (24 calibration points, 0px accuracy)
+
+## Live Demo 🌐
+
+[Visit EuroTopo Quiz](https://your-app-url.vercel.app) *(URL will be provided after deployment)*
+
+## Quick Start 🏃‍♂️
 
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/eurotopo-quiz.git
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Educational Content 📚
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The quiz includes **40 European capitals** specifically selected for curriculum requirements:
+- Major EU capitals: Berlin, Paris, Rome, Madrid, etc.
+- Nordic capitals: Stockholm, Oslo, Helsinki, Copenhagen
+- Eastern Europe: Warsaw, Prague, Budapest, Kiev
+- Balkan region: Belgrade, Zagreb, Ljubljana, Sarajevo
+- And many more!
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Language Support 🌐
 
-## Learn More
+**English Mode**: "What is the capital of Germany?" → "Berlin"
+**Dutch Mode**: "Wat is de hoofdstad van Duitsland?" → "Berlijn"
 
-To learn more about Next.js, take a look at the following resources:
+Both question text and answers are accepted in both languages.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Development 👨‍💻
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Project Structure
+```
+src/
+├── app/                 # Next.js App Router
+├── components/          # React components
+├── utils/              # Translation system
+public/
+├── quizCapitals.json   # Quiz data (filtered)
+├── map.png             # Europe map image
+```
 
-## Deploy on Vercel
+### Key Components
+- `MapQuiz.tsx`: Main interactive quiz component
+- `translations.ts`: Bilingual translation system
+- Coordinate transformation algorithm for precise positioning
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment 🚀
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is optimized for **Vercel deployment**:
+- Automatic builds from Git
+- Edge function optimization
+- Global CDN distribution
+- Perfect for educational use
+
+## License 📄
+
+Created for educational purposes. Map data calibrated manually for accuracy.
+
+---
+
+**Built with ❤️ for geography education**
