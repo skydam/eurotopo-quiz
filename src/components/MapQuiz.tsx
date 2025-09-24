@@ -109,10 +109,8 @@ export default function MapQuiz() {
       const x = capital.mapPosition.x * scaleX
       const y = capital.mapPosition.y * scaleY
 
-      // Different colors based on difficulty
-      let color = '#3b82f6' // blue for easy
-      if (capital.difficulty === 'medium') color = '#f59e0b' // orange
-      if (capital.difficulty === 'hard') color = '#ef4444' // red
+      // Standard blue color for all markers
+      const color = '#3b82f6' // blue
 
       // Highlight current capital with animation
       if (currentCapital && capital.id === currentCapital.id) {
@@ -319,25 +317,6 @@ export default function MapQuiz() {
             />
           </div>
 
-          {/* Legend */}
-          <div className="mt-4 flex flex-wrap gap-4 text-sm">
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-blue-500 rounded-full border-2 border-white"></div>
-              <span>{t.ui.easy}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-orange-500 rounded-full border-2 border-white"></div>
-              <span>{t.ui.medium}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-red-500 rounded-full border-2 border-white"></div>
-              <span>{t.ui.hard}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-6 bg-green-500 rounded-full border-2 border-white"></div>
-              <span>{t.ui.currentQuestion}</span>
-            </div>
-          </div>
         </div>
 
         {/* Quiz Panel */}
@@ -359,14 +338,7 @@ export default function MapQuiz() {
                   )}
                 </h3>
                 <div className="text-sm text-gray-600 text-center">
-                  <span className={`px-2 py-1 rounded text-xs ${
-                    currentCapital.difficulty === 'easy' ? 'bg-blue-100 text-blue-800' :
-                    currentCapital.difficulty === 'medium' ? 'bg-orange-100 text-orange-800' :
-                    'bg-red-100 text-red-800'
-                  }`}>
-                    {currentCapital.difficulty.charAt(0).toUpperCase() + currentCapital.difficulty.slice(1)}
-                  </span>
-                  <span className="ml-2 text-gray-500">
+                  <span className="text-gray-500">
                     {t.ui.population}: {currentCapital.population ? currentCapital.population.toLocaleString() : 'N/A'}
                   </span>
                 </div>
