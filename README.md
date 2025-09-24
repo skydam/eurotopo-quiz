@@ -93,3 +93,4 @@ Created for educational purposes. Map data calibrated manually for accuracy.
 ---
 
 **Built with ❤️ for geography education**
+# Trigger Vercel deployment
