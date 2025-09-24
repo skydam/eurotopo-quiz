@@ -1,24 +1,7 @@
 {
   "version": 2,
   "name": "eurotopo-quiz",
-  "builds": [
-    {
-      "src": "next.config.ts",
-      "use": "@vercel/next"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/"
-    }
-  ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "functions": {
-    "src/app/**": {
-      "maxDuration": 10
-    }
   }
 }
