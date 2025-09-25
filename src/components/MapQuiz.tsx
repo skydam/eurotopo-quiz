@@ -147,14 +147,11 @@ export default function MapQuiz() {
 
     switch (level) {
       case 1:
-        // Level 1: Region + population info
-        const populationText = capital.population
-          ? capital.population > 5000000 ? (language === 'en' ? 'over 5 million' : 'meer dan 5 miljoen')
-            : capital.population > 1000000 ? (language === 'en' ? '1-5 million' : '1-5 miljoen')
-            : (language === 'en' ? 'under 1 million' : 'minder dan 1 miljoen')
-          : (language === 'en' ? 'population data unavailable' : 'bevolkingsgegevens niet beschikbaar')
+        // Level 1: Last letter hint
+        const correctAnswer = t.capitals[capital.capital] || capital.capital
+        const lastLetter = correctAnswer[correctAnswer.length - 1].toUpperCase()
 
-        return `${language === 'en' ? 'This capital is in' : 'Deze hoofdstad ligt in'} ${capital.region}, ${language === 'en' ? 'population' : 'bevolking'} ${populationText}`
+        return `${language === 'en' ? 'Ends with the letter' : 'Eindigt op de letter'} '${lastLetter}'`
 
       case 2:
         // Level 2: First letter + cultural clue
@@ -366,7 +363,7 @@ export default function MapQuiz() {
     const scoreMultiplier = hintLevel === 0 ? 1 : // No hints: 100%
                           hintLevel === 1 ? 0.8 : // Level 1 hint: 80%
                           hintLevel === 2 ? 0.6 : // Level 2 hint: 60%
-                          0.5 // Level 3 hint (multiple choice): 50%
+                          0.3 // Level 3 hint (multiple choice): 30%
 
     if (isCorrect) {
       const earnedScore = scoreMultiplier
