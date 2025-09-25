@@ -361,9 +361,9 @@ export default function MapQuiz() {
 
     // Calculate score based on hint usage
     const scoreMultiplier = hintLevel === 0 ? 1 : // No hints: 100%
-                          hintLevel === 1 ? 0.8 : // Level 1 hint: 80%
-                          hintLevel === 2 ? 0.6 : // Level 2 hint: 60%
-                          0.3 // Level 3 hint (multiple choice): 30%
+                          hintLevel === 1 ? 0.75 : // Level 1 hint: 75%
+                          hintLevel === 2 ? 0.5 : // Level 2 hint: 50%
+                          0.25 // Level 3 hint (multiple choice): 25%
 
     if (isCorrect) {
       const earnedScore = scoreMultiplier
