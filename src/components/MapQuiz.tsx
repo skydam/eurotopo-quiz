@@ -155,8 +155,8 @@ export default function MapQuiz() {
 
       case 2:
         // Level 2: First letter + cultural clue
-        const correctAnswer = t.capitals[capital.capital] || capital.capital
-        const firstLetter = correctAnswer[0].toUpperCase()
+        const correctAnswerLevel2 = t.capitals[capital.capital] || capital.capital
+        const firstLetter = correctAnswerLevel2[0].toUpperCase()
 
         // Simple cultural/geographic clues based on country
         const culturalClues: Record<string, {en: string, nl: string}> = {
