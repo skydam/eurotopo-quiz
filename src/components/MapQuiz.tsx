@@ -56,7 +56,7 @@ export default function MapQuiz() {
   // const [gameMode, setGameMode] = useState<'practice' | 'quiz'>('practice') // Future feature
   const [showAnswer, setShowAnswer] = useState(false)
   const [language, setLanguage] = useState<'en' | 'nl'>('nl')
-  const [questionHistory, setQuestionHistory] = useState<boolean[]>([]) // Track correct/incorrect for last 20 questions
+  const [questionHistory, setQuestionHistory] = useState<{correct: boolean, userAnswer?: string, correctAnswer?: string}[]>([]) // Track correct/incorrect for last 20 questions with answers
   const [consecutiveCorrect, setConsecutiveCorrect] = useState(0) // Track consecutive correct answers
   const [showCelebration, setShowCelebration] = useState(false) // Show celebration video
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -70,7 +70,7 @@ export default function MapQuiz() {
   const calculateRollingScore = useCallback(() => {
     if (questionHistory.length === 0) return 0
     const recentQuestions = questionHistory.slice(-20) // Last 20 questions
-    const correctCount = recentQuestions.filter(correct => correct).length
+    const correctCount = recentQuestions.filter(q => q.correct).length
     return Math.round((correctCount / recentQuestions.length) * 100)
   }, [questionHistory])
 
@@ -268,7 +268,12 @@ export default function MapQuiz() {
 
     // Update question history (keep last 20 questions)
     setQuestionHistory(prev => {
-      const newHistory = [...prev, isCorrect]
+      const newEntry = {
+        correct: isCorrect,
+        userAnswer: isCorrect ? undefined : userAnswer.trim(),
+        correctAnswer: isCorrect ? undefined : translatedCapital
+      }
+      const newHistory = [...prev, newEntry]
       return newHistory.slice(-20) // Keep only last 20
     })
 
@@ -287,7 +292,8 @@ export default function MapQuiz() {
 
     // Track skip as incorrect for the graph
     setQuestionHistory(prev => {
-      const newHistory = [...prev, false] // Skip counts as incorrect
+      const newEntry = { correct: false } // Skip counts as incorrect, no answer to show
+      const newHistory = [...prev, newEntry]
       return newHistory.slice(-20) // Keep only last 20
     })
 
@@ -448,14 +454,19 @@ export default function MapQuiz() {
 
                   {/* Simple bar chart visualization */}
                   <div className="space-y-1">
-                    {questionHistory.slice(-Math.min(20, questionHistory.length)).map((correct, index) => (
+                    {questionHistory.slice(-Math.min(20, questionHistory.length)).map((entry, index) => (
                       <div key={index} className="flex items-center gap-2">
                         <div className="text-xs text-gray-400 w-6">
                           {questionHistory.length - Math.min(20, questionHistory.length) + index + 1}
                         </div>
-                        <div className={`h-4 w-4 rounded-sm ${correct ? 'bg-green-500' : 'bg-red-500'}`}></div>
-                        <div className="text-xs text-gray-600">
-                          {correct ? (language === 'en' ? 'Correct' : 'Juist') : (language === 'en' ? 'Incorrect' : 'Fout')}
+                        <div className={`h-4 w-4 rounded-sm flex-shrink-0 ${entry.correct ? 'bg-green-500' : 'bg-red-500'}`}></div>
+                        <div className="text-xs text-gray-600 flex-1">
+                          {entry.correct
+                            ? (language === 'en' ? 'Correct' : 'Juist')
+                            : entry.userAnswer && entry.correctAnswer
+                              ? `${entry.userAnswer} → ${entry.correctAnswer}`
+                              : (language === 'en' ? 'Skipped' : 'Overgeslagen')
+                          }
                         </div>
                       </div>
                     ))}
