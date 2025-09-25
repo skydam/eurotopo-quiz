@@ -56,9 +56,12 @@ export default function MapQuiz() {
   // const [gameMode, setGameMode] = useState<'practice' | 'quiz'>('practice') // Future feature
   const [showAnswer, setShowAnswer] = useState(false)
   const [language, setLanguage] = useState<'en' | 'nl'>('nl')
-  const [questionHistory, setQuestionHistory] = useState<{correct: boolean, userAnswer?: string, correctAnswer?: string}[]>([]) // Track correct/incorrect for last 20 questions with answers
+  const [questionHistory, setQuestionHistory] = useState<{correct: boolean, userAnswer?: string, correctAnswer?: string, hintLevel?: number}[]>([]) // Track correct/incorrect for last 20 questions with answers
   const [consecutiveCorrect, setConsecutiveCorrect] = useState(0) // Track consecutive correct answers
   const [showCelebration, setShowCelebration] = useState(false) // Show celebration video
+  const [hintLevel, setHintLevel] = useState(0) // Current hint level (0 = no hints, 1-3 = hint levels)
+  const [hintText, setHintText] = useState('') // Current hint text to display
+  const [multipleChoices, setMultipleChoices] = useState<string[]>([]) // For level 3 hints
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const imageRef = useRef<HTMLImageElement>(null)
   const animationRef = useRef<number | null>(null)
@@ -92,6 +95,117 @@ export default function MapQuiz() {
     setUserAnswer('')
     setFeedback('')
     setShowAnswer(false)
+    setHintLevel(0)
+    setHintText('')
+    setMultipleChoices([])
+  }
+
+  // Generate smart multiple choice options for level 3 hints
+  const generateMultipleChoice = useCallback((correctCapital: Capital, allCapitals: Capital[]) => {
+    const correctAnswer = t.capitals[correctCapital.capital] || correctCapital.capital
+    const choices = [correctAnswer]
+
+    // Try to add similar cities (same region, similar first letter, etc.)
+    const otherCapitals = allCapitals.filter(c => c.id !== correctCapital.id)
+
+    // Add a city from same region if available
+    const sameRegion = otherCapitals.find(c =>
+      c.region === correctCapital.region &&
+      !choices.includes(t.capitals[c.capital] || c.capital)
+    )
+    if (sameRegion && choices.length < 3) {
+      choices.push(t.capitals[sameRegion.capital] || sameRegion.capital)
+    }
+
+    // Add a city with similar first letter if available
+    const firstLetter = correctAnswer[0].toLowerCase()
+    const similarFirstLetter = otherCapitals.find(c => {
+      const translatedCapital = t.capitals[c.capital] || c.capital
+      return translatedCapital[0].toLowerCase() === firstLetter &&
+             !choices.includes(translatedCapital)
+    })
+    if (similarFirstLetter && choices.length < 3) {
+      choices.push(t.capitals[similarFirstLetter.capital] || similarFirstLetter.capital)
+    }
+
+    // Fill remaining slots with random capitals
+    while (choices.length < 3) {
+      const randomCapital = otherCapitals[Math.floor(Math.random() * otherCapitals.length)]
+      const translatedCapital = t.capitals[randomCapital.capital] || randomCapital.capital
+      if (!choices.includes(translatedCapital)) {
+        choices.push(translatedCapital)
+      }
+    }
+
+    // Shuffle the choices so correct answer isn't always first
+    return choices.sort(() => Math.random() - 0.5)
+  }, [t])
+
+  // Generate hint text based on level
+  const generateHintText = useCallback((capital: Capital, level: number) => {
+    const translatedCountry = t.countries[capital.country] || capital.country
+
+    switch (level) {
+      case 1:
+        // Level 1: Region + population info
+        const populationText = capital.population
+          ? capital.population > 5000000 ? (language === 'en' ? 'over 5 million' : 'meer dan 5 miljoen')
+            : capital.population > 1000000 ? (language === 'en' ? '1-5 million' : '1-5 miljoen')
+            : (language === 'en' ? 'under 1 million' : 'minder dan 1 miljoen')
+          : (language === 'en' ? 'population data unavailable' : 'bevolkingsgegevens niet beschikbaar')
+
+        return `${language === 'en' ? 'This capital is in' : 'Deze hoofdstad ligt in'} ${capital.region}, ${language === 'en' ? 'population' : 'bevolking'} ${populationText}`
+
+      case 2:
+        // Level 2: First letter + cultural clue
+        const correctAnswer = t.capitals[capital.capital] || capital.capital
+        const firstLetter = correctAnswer[0].toUpperCase()
+
+        // Simple cultural/geographic clues based on country
+        const culturalClues: Record<string, {en: string, nl: string}> = {
+          'Netherlands': {en: 'famous for canals and bicycles', nl: 'beroemd om grachten en fietsen'},
+          'France': {en: 'city of lights and romance', nl: 'stad van lichten en romantiek'},
+          'Germany': {en: 'known for history and beer', nl: 'bekend om geschiedenis en bier'},
+          'Italy': {en: 'eternal city with ancient history', nl: 'eeuwige stad met oude geschiedenis'},
+          'Spain': {en: 'vibrant culture and flamenco', nl: 'levendige cultuur en flamenco'},
+          'Portugal': {en: 'beautiful tiles and fado music', nl: 'mooie tegels en fado-muziek'},
+        }
+
+        const clue = culturalClues[capital.country] ||
+          {en: 'interesting European destination', nl: 'interessante Europese bestemming'}
+
+        return `${language === 'en' ? 'Starts with' : 'Begint met'} '${firstLetter}', ${clue[language]}`
+
+      case 3:
+        // Level 3: Multiple choice instructions
+        return language === 'en' ? 'Choose the correct capital:' : 'Kies de juiste hoofdstad:'
+
+      default:
+        return ''
+    }
+  }, [t, language])
+
+  // Handle hint button click
+  const handleHintClick = () => {
+    if (!currentCapital || !quizData || hintLevel >= 3) return
+
+    const newHintLevel = hintLevel + 1
+    setHintLevel(newHintLevel)
+
+    if (newHintLevel === 3) {
+      // Generate multiple choice for level 3
+      const choices = generateMultipleChoice(currentCapital, quizData.capitals)
+      setMultipleChoices(choices)
+    }
+
+    const hintText = generateHintText(currentCapital, newHintLevel)
+    setHintText(hintText)
+  }
+
+  // Handle multiple choice selection
+  const handleMultipleChoiceClick = (choice: string) => {
+    setUserAnswer(choice)
+    setMultipleChoices([]) // Hide choices after selection
   }
 
   // Draw the map and markers with animation
@@ -248,17 +362,31 @@ export default function MapQuiz() {
                      userAnswerLower.includes(correctAnswerEn) ||
                      userAnswerLower.includes(correctAnswerNl)
 
+    // Calculate score based on hint usage
+    const scoreMultiplier = hintLevel === 0 ? 1 : // No hints: 100%
+                          hintLevel === 1 ? 0.8 : // Level 1 hint: 80%
+                          hintLevel === 2 ? 0.6 : // Level 2 hint: 60%
+                          0.5 // Level 3 hint (multiple choice): 50%
+
     if (isCorrect) {
-      setScore(score + 1)
-      setFeedback(`${t.ui.correct} ${translatedCapital} ${language === 'en' ? 'is the capital of' : 'is de hoofdstad van'} ${translatedCountry}.`)
+      const earnedScore = scoreMultiplier
+      setScore(score + earnedScore)
 
-      // Track consecutive correct answers
-      const newConsecutiveCorrect = consecutiveCorrect + 1
-      setConsecutiveCorrect(newConsecutiveCorrect)
+      const hintText = hintLevel > 0 ? ` (${Math.round(scoreMultiplier * 100)}% ${language === 'en' ? 'with hints' : 'met hints'})` : ''
+      setFeedback(`${t.ui.correct} ${translatedCapital} ${language === 'en' ? 'is the capital of' : 'is de hoofdstad van'} ${translatedCountry}.${hintText}`)
 
-      // Show celebration video at 15 consecutive correct answers
-      if (newConsecutiveCorrect === 15) {
-        setShowCelebration(true)
+      // Track consecutive correct answers (only count full score answers for streak)
+      if (hintLevel === 0) {
+        const newConsecutiveCorrect = consecutiveCorrect + 1
+        setConsecutiveCorrect(newConsecutiveCorrect)
+
+        // Show celebration video at 15 consecutive correct answers
+        if (newConsecutiveCorrect === 15) {
+          setShowCelebration(true)
+        }
+      } else {
+        // Reset streak if hints were used
+        setConsecutiveCorrect(0)
       }
     } else {
       setFeedback(`${t.ui.incorrect} ${language === 'en' ? 'The capital of' : 'De hoofdstad van'} ${translatedCountry} ${language === 'en' ? 'is' : 'is'} ${translatedCapital}.`)
@@ -271,7 +399,8 @@ export default function MapQuiz() {
       const newEntry = {
         correct: isCorrect,
         userAnswer: isCorrect ? undefined : userAnswer.trim(),
-        correctAnswer: isCorrect ? undefined : translatedCapital
+        correctAnswer: isCorrect ? undefined : translatedCapital,
+        hintLevel: hintLevel
       }
       const newHistory = [...prev, newEntry]
       return newHistory.slice(-20) // Keep only last 20
@@ -401,6 +530,49 @@ export default function MapQuiz() {
                       autoFocus
                     />
                   </div>
+
+                  {/* Hint System */}
+                  <div className="space-y-3">
+                    {/* Hint Button */}
+                    <div className="flex justify-center">
+                      <button
+                        type="button"
+                        onClick={handleHintClick}
+                        disabled={hintLevel >= 3}
+                        className="flex items-center gap-2 px-3 py-2 text-sm bg-yellow-100 hover:bg-yellow-200 disabled:bg-gray-100 disabled:text-gray-400 text-yellow-800 rounded-lg border border-yellow-300 disabled:border-gray-300"
+                      >
+                        <span>💡</span>
+                        {hintLevel === 0 ? (language === 'en' ? 'Hint' : 'Hint') :
+                         hintLevel === 1 ? (language === 'en' ? 'More' : 'Meer') :
+                         hintLevel === 2 ? (language === 'en' ? 'Last Hint' : 'Laatste Hint') :
+                         (language === 'en' ? 'No More Hints' : 'Geen Hints Meer')}
+                      </button>
+                    </div>
+
+                    {/* Hint Display */}
+                    {hintText && (
+                      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
+                        <p className="text-sm text-yellow-800 text-center">{hintText}</p>
+
+                        {/* Multiple Choice Buttons for Level 3 */}
+                        {multipleChoices.length > 0 && (
+                          <div className="mt-3 space-y-2">
+                            {multipleChoices.map((choice, index) => (
+                              <button
+                                key={index}
+                                type="button"
+                                onClick={() => handleMultipleChoiceClick(choice)}
+                                className="w-full px-4 py-2 text-sm bg-white hover:bg-yellow-100 border border-yellow-300 rounded text-gray-700 hover:text-yellow-800"
+                              >
+                                {choice}
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+
                   <div className="flex gap-2">
                     <button
                       type="submit"
@@ -462,7 +634,7 @@ export default function MapQuiz() {
                         <div className={`h-4 w-4 rounded-sm flex-shrink-0 ${entry.correct ? 'bg-green-500' : 'bg-red-500'}`}></div>
                         <div className="text-xs text-gray-600 flex-1">
                           {entry.correct
-                            ? (language === 'en' ? 'Correct' : 'Juist')
+                            ? `${language === 'en' ? 'Correct' : 'Juist'}${entry.hintLevel ? ` (${entry.hintLevel === 1 ? '80%' : entry.hintLevel === 2 ? '60%' : '50%'})` : ''}`
                             : entry.userAnswer && entry.correctAnswer
                               ? `${entry.userAnswer} → ${entry.correctAnswer}`
                               : (language === 'en' ? 'Skipped' : 'Overgeslagen')
